@@ -73,7 +73,7 @@ def main():
 
 #					statcmd= '''tail -n 10 stat | grep '[0-9]*:[0-9]*:[0-9]*' | sed 's/ \+/ /g' | cut -d ' ' -f 2-5,8- | awk '{for (i=1;i<=NF;i++){a[i]+=$i;}} END {for (i=1;i<=NF;i++){printf "%f ", a[i]/NR;}}' '''
 					statcmd= '''ssh -i %s %s@%s 'tail -n 10 stat' | grep '[0-9]*:[0-9]*:[0-9]*' | sed 's/ \+/ /g' | cut -d ' ' -f %s | awk '{for (i=1;i<=NF;i++){a[i]+=$i;}} END {for (i=1;i<=NF;i++){printf "%%f ", a[i]/NR;}}' '''
-					statavg=subprocess.check_output(statcmd%(prv_key,usr,repWorker,stat_f_select),shell=True)
+				#	statavg=subprocess.check_output(statcmd%(prv_key,usr,repWorker,stat_f_select),shell=True)
 	#				print statavg
 
 					workerStatus=workerInit()
@@ -207,7 +207,8 @@ def workerInit():
 	return d
 
 def estimateMetrics(metrics,w,k):
-	from bvaluesAWS import bvalues
+#	from bvaluesAWS import bvalues
+	import bvalues
         for i in range(0,len(metrics)):
                 metrics[i]=numpy.dot(bvalues[i],[(metrics[i]*w)/(w+k),(metrics[i]*k)/(w+k),1])
         return metrics
