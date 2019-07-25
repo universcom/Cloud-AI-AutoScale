@@ -17,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Neutral_Network.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Neutral_Network.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Neutral_Network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="118" lean-forward="true" selection-start-line="71" selection-end-line="118" />
+            <state relative-caret-position="67">
+              <caret line="118" selection-start-line="71" selection-end-line="118" />
               <folding>
                 <element signature="e#73#133#0" expanded="true" />
               </folding>
@@ -32,7 +32,7 @@
       <file leaf-file-name="Training_phase.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Training_phase.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
+            <state relative-caret-position="345">
               <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
             </state>
           </provider>
@@ -41,7 +41,7 @@
       <file leaf-file-name="creat_test_file.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/files/creat_test_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="45">
               <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#18#31#0" expanded="true" />
@@ -53,8 +53,8 @@
       <file leaf-file-name="MLscale_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MLscale_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2655">
-              <caret line="177" column="31" lean-forward="true" selection-start-line="164" selection-end-line="177" selection-end-column="31" />
+            <state relative-caret-position="135">
+              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
               <folding>
                 <element signature="e#0#60#0" expanded="true" />
               </folding>
@@ -65,13 +65,18 @@
       <file leaf-file-name="openstack_Python_APIs.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/openstack_Python_APIs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="27" column="112" selection-start-line="27" selection-start-column="112" selection-end-line="27" selection-end-column="112" />
+            <state relative-caret-position="530">
+              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bvalues.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bvalues.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -82,6 +87,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -95,6 +103,7 @@
         <option value="$PROJECT_DIR$/Neutral_Network.py" />
         <option value="$PROJECT_DIR$/MLscale_main.py" />
         <option value="$PROJECT_DIR$/openstack_Python_APIs.py" />
+        <option value="$PROJECT_DIR$/bvalues.py" />
       </list>
     </option>
   </component>
@@ -107,16 +116,20 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="-1" />
     <option name="width" value="1366" />
     <option name="height" value="741" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,7 +146,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,17 +256,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1366" height="741" extended-state="7" />
+    <frame x="0" y="-1" width="1366" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32952693" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32841823" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32899022" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27348486" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19924243" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32947233" />
@@ -277,6 +289,53 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Neutral_Network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1770">
+          <caret line="118" lean-forward="true" selection-start-line="71" selection-end-line="118" />
+          <folding>
+            <element signature="e#73#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Training_phase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/creat_test_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#18#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MLscale_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2610">
+          <caret line="177" column="31" lean-forward="true" selection-start-line="164" selection-end-line="177" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openstack_Python_APIs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="112" selection-start-line="27" selection-start-column="112" selection-end-line="27" selection-end-column="112" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Neutral_Network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -434,9 +493,26 @@
     <entry file="file://$PROJECT_DIR$/files/prcntrt_rr_statwosysdsk.network">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Neutral_Network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="118" selection-start-line="71" selection-end-line="118" />
+          <folding>
+            <element signature="e#73#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Training_phase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/files/creat_test_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#18#31#0" expanded="true" />
@@ -446,40 +522,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MLscale_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2655">
-          <caret line="177" column="31" lean-forward="true" selection-start-line="164" selection-end-line="177" selection-end-column="31" />
+        <state relative-caret-position="135">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Training_phase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/openstack_Python_APIs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="27" column="112" selection-start-line="27" selection-start-column="112" selection-end-line="27" selection-end-column="112" />
+        <state relative-caret-position="530">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Neutral_Network.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="118" lean-forward="true" selection-start-line="71" selection-end-line="118" />
-          <folding>
-            <element signature="e#73#133#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/bvalues.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
