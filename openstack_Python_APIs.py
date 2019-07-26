@@ -1,5 +1,5 @@
 from openstack import connection
-import datetime , subprocess , time
+import datetime , subprocess , time , numpy
 
 
 
@@ -64,3 +64,9 @@ class Connection :
             else:
                 Worker_Status[worker_ip] = False
         return Worker_Status
+
+    def estimateMetrics(metrics, w, k):
+        from bvalues import bvalues as bv
+        for i in range(0, len(metrics)):
+            metrics[i] = numpy.dot(bv[i], [(metrics[i] * w) / (w + k), (metrics[i] * k) / (w + k), 1])
+        return metrics

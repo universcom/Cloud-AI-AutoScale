@@ -207,10 +207,9 @@ def workerInit():
 	return d
 
 def estimateMetrics(metrics,w,k):
-#	from bvaluesAWS import bvalues
-	import bvalues
+	from bvalues import bvalues as bv
         for i in range(0,len(metrics)):
-                metrics[i]=numpy.dot(bvalues[i],[(metrics[i]*w)/(w+k),(metrics[i]*k)/(w+k),1])
+                metrics[i]=numpy.dot(bv[i],[(metrics[i]*w)/(w+k),(metrics[i]*k)/(w+k),1])
         return metrics
 
 main()
