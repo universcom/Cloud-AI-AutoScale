@@ -5,7 +5,7 @@ import datetime , subprocess , time , numpy
 
 class Connection :
     def __init__(self):
-        self.conn = connection.Connection(auth_url="http://194.225.227.175:5000/v3",
+        self.conn = connection.Connection(auth_url="http://controller:5000/v3",
                                      project_name="admin",
                                      username="admin",
                                      password="hamed",
