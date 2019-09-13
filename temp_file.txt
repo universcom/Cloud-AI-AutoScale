@@ -1,0 +1,32 @@
+task = { "auth": {
+            "identity": {
+              "methods": ["password"],
+              "password": {
+                "user": {
+                  "name": "admin",
+                  "domain": { "id": "default" },
+                  "password": "hamed"
+                }
+              }
+            },
+            "scope": {
+              "project": {
+                "name": "admin",
+                "domain": { "id": "default" }
+              }
+            }
+          }
+        }
+
+
+resp = requests.post('http://localhost:5000/v3/auth/tokens' , data=json.dumps(task) , headers={'Content-Type':'application/json'} )
+print resp.headers['X-Subject-Token']
+
+
+resp1 = requests.post('http://localhost:8041/v1/search/resource/instance_network_interface' ,headers={'Content-Type':'application/json' , 'X-AUTH-TOKEN' :resp.headers['X-Subject-Token']} , data=datas)
+
+i=0
+for res in resp1.json():
+    if str(resp1.json()[i]['instance_id']) == "4bcb2b5b-0946-4b88-bfea-d43956333020":
+      print resp1.json()[i]['id']
+    i+=1
