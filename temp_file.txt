@@ -30,3 +30,18 @@ for res in resp1.json():
     if str(resp1.json()[i]['instance_id']) == "4bcb2b5b-0946-4b88-bfea-d43956333020":
       print resp1.json()[i]['id']
     i+=1
+
+
+
+if t1 >= t2 and t1<=t3 :
+   print "true"
+else:
+   print "false"
+
+from datetime import timedelta
+from datetime import datetime
+import datatime
+import time
+t1= datetime.strptime(t1, '%Y-%m-%dT%H:%M:%S') ##string to RT_timestamp
+t2 = t1 + timedelta(seconds=60) ##add one minute to time
+t3 = t2.strftime('%Y-%m-%dT%H:%M:%S')

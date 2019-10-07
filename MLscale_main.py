@@ -39,12 +39,9 @@ def main():
         print "w calculated"
 #	exit(0)
         print loglines
-#	for line in loglines:
-        for line in ["hamed" , "sajjad"]:
-                print "try"
+	for line in loglines:
 		try:
 			if first:
-                                print "start"
 				matches=re.search('.*:([0-9]*:[0-9]*:[0-9])[0-9] .* ([0-9]*)',line)
 				cts=matches.group(1)
 				RT=float(matches.group(2))/1000.
@@ -52,8 +49,6 @@ def main():
 				N=1
 				first=False
 			else:
-	#			print line
-                                print "second start"
 				matches=re.search('.*:([0-9]*:[0-9]*:[0-9])[0-9] .* ([0-9]*)',line)
 				ts=matches.group(1)
 				if cts==ts:
@@ -73,7 +68,7 @@ def main():
 
 #					statcmd= '''tail -n 10 stat | grep '[0-9]*:[0-9]*:[0-9]*' | sed 's/ \+/ /g' | cut -d ' ' -f 2-5,8- | awk '{for (i=1;i<=NF;i++){a[i]+=$i;}} END {for (i=1;i<=NF;i++){printf "%f ", a[i]/NR;}}' '''
 					statcmd= '''ssh -i %s %s@%s 'tail -n 10 stat' | grep '[0-9]*:[0-9]*:[0-9]*' | sed 's/ \+/ /g' | cut -d ' ' -f %s | awk '{for (i=1;i<=NF;i++){a[i]+=$i;}} END {for (i=1;i<=NF;i++){printf "%%f ", a[i]/NR;}}' '''
-				#	statavg=subprocess.check_output(statcmd%(prv_key,usr,repWorker,stat_f_select),shell=True)
+					statavg=subprocess.check_output(statcmd%(prv_key,usr,repWorker,stat_f_select),shell=True)
 	#				print statavg
 
 					workerStatus=workerInit()

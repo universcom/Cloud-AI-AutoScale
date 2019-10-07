@@ -1,5 +1,7 @@
 import requests
 import json
+import time
+from datetime import datetime , timedelta
 
 class gnocchi_api:
     def __init__(self , username , password , project_name):
@@ -47,7 +49,7 @@ class gnocchi_api:
         print resp.text
 
 
-    def get_metric_value(self , metric_name , resource_type ,resource_id ):
+    def get_metric_value(self , metric_name , resource_type ,resource_id , RT_timestamp ):
         header_date = {
             'Content-Type':'application/json' ,
             'Content-Length': '0' ,
@@ -55,7 +57,10 @@ class gnocchi_api:
         }
         url = self._url('/v1/resource/' + resource_type + '/' + resource_id + '/metric/' + metric_name + '/measures?granularity=60second&refresh=true')
         resp = requests.get(url , headers=header_date)
-        return resp.json()[-1][2]
+        all_responses = resp.json()
+        for response in all_responses:
+            if self.time_compersation(RT_timestamp , response[0].split("+")[0]):
+                return response[2]
 
     def get_resource_id(self , resource_type ,instance_id):
         header_date = {
@@ -75,9 +80,20 @@ class gnocchi_api:
     def _url(self , path):
         return 'http://localhost:8041' + path
 
+    def time_compersation(self , RT_timestamp , Value_timestamp):
+        RTT = RT_timestamp
+        T1 = Value_timestamp
+        T2 = (datetime.strptime(T1, '%Y-%m-%dT%H:%M:%S') + timedelta(seconds=60)).strftime('%Y-%m-%dT%H:%M:%S')
+        if (RTT >= T1) and (RTT < T2):
+            return True
+        else:
+            return False
+
+
+
 def main():
     resp = gnocchi_api("admin" , "hamed" , "admin")
-    #print round(resp.get_metric_value("cpu_util" , "instance" , "661449cf-b267-4849-8613-9a348b35a9ee"), 3)
-    print resp.get_resource_id("instance_network_interface" , "4bcb2b5b-0946-4b88-bfea-d43956333020") 
+    print resp.get_metric_value("cpu_util" , "instance" , "661449cf-b267-4849-8613-9a348b35a9ee" , "2019-10-07T07:17:00")
+    #print resp.get_resource_id("instance_network_interface" , "4bcb2b5b-0946-4b88-bfea-d43956333020")
 
 main()
