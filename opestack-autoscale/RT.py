@@ -1,6 +1,6 @@
 import time , requests , datetime
 
-def Response_Time(self)
+def Response_Time(self):
     LB_ip = '192.168.0.142'
     while 1:
         start = time.time()
