@@ -5,7 +5,7 @@ import ConfigParser
 import datetime
 
 def main_proccess():
-    conf_path = "/root/main_code/openstack-autoscale"
+    conf_path = "/root/main_code/autoscale-cloud/opestack-autoscale"
     configParser = ConfigParser.RawConfigParser()
     configFilePath = conf_path + "/autoscale.conf"
     configParser.read(configFilePath)
