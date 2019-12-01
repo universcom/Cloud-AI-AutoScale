@@ -5,7 +5,7 @@ from openstack_api import OpenstackConnection
 import ConfigParser
 
 def main_proccess(self):
-    conf_path = "/root/openstack-autoscale"
+    conf_path = "/root/main_code/openstack-autoscale"
     configParser = ConfigParser.RawConfigParser()
     configFilePath = conf_path + "/autoscale.conf"
     configParser.read(configFilePath)
