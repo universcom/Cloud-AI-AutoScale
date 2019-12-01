@@ -7,13 +7,13 @@ import ConfigParser
 def main_proccess(self):
     conf_path = "/root/openstack-autoscale"
     configParser = ConfigParser.RawConfigParser()
-    configFilePath = conf_path + "/billing.conf"
+    configFilePath = conf_path + "/autoscale.conf"
     configParser.read(configFilePath)
     instance_id = configParser.get('configuration', 'instance_based_id')
     sla_RT_Upper = float(configParser.get('configuration', 'upper_RT'))
     sla_RT_Lower = float(configParser.get('configuration', 'lower_RT'))
-    RT_Net = loadnet('./RT_Net')
-    Resource_Net = loadnet('./Resource_Net')
+    RT_Net = loadnet('/root/autoscale-cloud/opestack-autoscale/RT_Net')
+    Resource_Net = loadnet('/root/autoscale-cloud/opestack-autoscale/Resource_Net')
     Now_RT = Response_Time()
     Perdicted_RT = Now_RT
     Now_Resource_usage = Resources_Usage(instance_id , "last")

@@ -21,8 +21,8 @@ def Resources_Usage(instance_id , TIMESTAMP) :
     outgoingPacketRate = data.get_metric_value("network.outgoing.packets.rate" , "instance_network_interface" , network_instance_resource_id , TIMESTAMP)
     Resources_Usage_array.append(outgoingPacketRate)
 
-    diskReadPacketRate = data.get_metric_value("disk.device.read.requests.rate" , "instance_disk" , disk_instance_resource_id , TIMESTAMP)
-    Resources_Usage_array.append(diskReadPacketRate)
+    #diskReadPacketRate = data.get_metric_value("disk.device.read.requests.rate" , "instance_disk" , disk_instance_resource_id , TIMESTAMP)
+    #Resources_Usage_array.append(diskReadPacketRate)
 
     diskWritePacketRate = data.get_metric_value("disk.device.write.requests.rate" , "instance_disk" , disk_instance_resource_id , TIMESTAMP)
     Resources_Usage_array.append(diskWritePacketRate)

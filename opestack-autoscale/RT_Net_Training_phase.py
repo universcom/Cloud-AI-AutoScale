@@ -9,7 +9,7 @@ import numpy as np
 
 # start reading data
 print "READING DATA..."
-data = readdata( './RT_Net_data.txt', delimiter = ',' )
+data = readdata( '/root/autoscale-cloud/opestack-autoscale/RT_Net_data.txt', delimiter = ',' )
 input =  data[:, 1:]
 target = data[:, :1]
 
@@ -27,7 +27,7 @@ el=time.time()-st
 print "Time to train NN with %d examples: %0.3f sec"%(n,el)
 
 # Save net
-savenet(net,'./RT_Net')
+savenet(net,'/root/autoscale-cloud/opestack-autoscale/RT_Net')
 
 #test net
 
