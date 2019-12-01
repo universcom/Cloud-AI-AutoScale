@@ -1,4 +1,4 @@
-from gnocchi import gnocchi_api
+from gnocchi_api import gnocchi_api
 
 #def Resources_Usage(instance_id , LB_id , TIMESTAMP) :
 def Resources_Usage(instance_id , TIMESTAMP) :
