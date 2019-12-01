@@ -7,5 +7,5 @@ def Response_Time(self)
         re=requests.get('http://' + LB_ip)
         if re.status_code == 200 or re.status_code == 201 or re.status_code == 202
             roundtrip = (time.time() - start)
-            Now_RT= round(roundtrip, 3)
+            Now_RT= float(roundtrip) * 1000
             return Now_RT
