@@ -18,6 +18,7 @@ def main_proccess():
     print upper_RT
     lower_RT = float(configParser.get('configuration', 'lower_RT'))
     print lower_RT
+    print Response_Time()
     # while 1 :
     #     Now_RT = Response_Time()
     #     sleep(60)
