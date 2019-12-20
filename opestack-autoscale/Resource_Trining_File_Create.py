@@ -19,35 +19,35 @@ def main_proccess():
     lower_RT = float(configParser.get('configuration', 'lower_RT'))
     print lower_RT
     print Response_Time(instance_id)
-    # while 1 :
-    #     Now_RT = Response_Time()
-    #     sleep(60)
-    #     Now_Resource_usage = Resources_Usage(instance_id , "last")
-    #     if Now_RT > upper_RT :
-    #         k += 1
-    #         w = sum(osc.workerInit())
-    #         osc.addWorker()
-    #         sleep(180)
-    #         New_Resource_usage = Resources_Usage(instance_id , "last")
-    #         Resource_Net_Create_File =  open("./Resorce_Net_data.txt", "w")
-    #         RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
-    #         (New_Resource_usage[0], New_Resource_usage[1], New_Resource_usage[2], New_Resource_usage[3], New_Resource_usage[4],New_Resource_usage[5]
-    #         ,Now_Resource_usage[0], Now_Resource_usage[1], Now_Resource_usage[2], Now_Resource_usage[3], Now_Resource_usage[4],Now_Resource_usage[5]
-    #         ,k ,w))
-    #         Resource_Net_Create_File.close()
-    #
-    #     elif Now_RT < lower_RT:
-    #         k -= 1
-    #         w = sum(osc.workerInit())
-    #         if w > 1:
-    #             osc.removeWorker()
-    #             sleep(180)
-    #             New_Resource_usage = Resources_Usage(instance_id , "last")
-    #             Resource_Net_Create_File =  open("./Resorce_Net_data.txt", "w")
-    #             RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
-    #             (New_Resource_usage[0], New_Resource_usage[1], New_Resource_usage[2], New_Resource_usage[3], New_Resource_usage[4],New_Resource_usage[5]
-    #             ,Now_Resource_usage[0], Now_Resource_usage[1], Now_Resource_usage[2], Now_Resource_usage[3], Now_Resource_usage[4],Now_Resource_usage[5]
-    #             ,k ,w))
-    #             Resource_Net_Create_File.close()
+    while 1 :
+        Now_RT = Response_Time()
+        sleep(60)
+        Now_Resource_usage = Resources_Usage(instance_id , "last")
+        if Now_RT > upper_RT :
+            k += 1
+            w = sum(osc.workerInit())
+            osc.addWorker()
+            sleep(180)
+            New_Resource_usage = Resources_Usage(instance_id , "last")
+            Resource_Net_Create_File =  open("./Resorce_Net_data.txt", "w")
+            RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
+            (New_Resource_usage[0], New_Resource_usage[1], New_Resource_usage[2], New_Resource_usage[3], New_Resource_usage[4],New_Resource_usage[5]
+            ,Now_Resource_usage[0], Now_Resource_usage[1], Now_Resource_usage[2], Now_Resource_usage[3], Now_Resource_usage[4],Now_Resource_usage[5]
+            ,k ,w))
+            Resource_Net_Create_File.close()
+
+        elif Now_RT < lower_RT:
+            k -= 1
+            w = sum(osc.workerInit())
+            if w > 1:
+                osc.removeWorker()
+                sleep(180)
+                New_Resource_usage = Resources_Usage(instance_id , "last")
+                Resource_Net_Create_File =  open("./Resorce_Net_data.txt", "w")
+                RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
+                (New_Resource_usage[0], New_Resource_usage[1], New_Resource_usage[2], New_Resource_usage[3], New_Resource_usage[4],New_Resource_usage[5]
+                ,Now_Resource_usage[0], Now_Resource_usage[1], Now_Resource_usage[2], Now_Resource_usage[3], Now_Resource_usage[4],Now_Resource_usage[5]
+                ,k ,w))
+                Resource_Net_Create_File.close()
 
 main_proccess()
