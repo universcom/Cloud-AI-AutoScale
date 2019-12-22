@@ -13,6 +13,7 @@ def Resources_Usage(instance_id , TIMESTAMP) :
     while 1:
         cpuUtileValue = data.get_metric_value("cpu_util" , "instance" , instance_resource_id , TIMESTAMP)
         if str(cpuUtileValue) == "None":
+            print str(cpuUtileValue)
             time.sleep(10)
             continue
         else:
