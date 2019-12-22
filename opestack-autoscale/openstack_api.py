@@ -84,7 +84,7 @@ class OpenstackConnection :
         worker_name = "worker-" + str(last_OCT_Worker_IP)
         addedmember = self.conn.network.create_pool_member("09b7c08e-c993-47b7-a52f-373e89bf1535",
                                                       address=worker_ip, protocol_port="80",
-                                                      subnet_id="292390c6-2664-4f97-9b8b-d45b2d5cb4e6"
+                                                      subnet_id="047893e0-3a15-43dd-8078-d8a3acd1f4fc"
                                                       , name=worker_name, weight="1")
         time.sleep(5)
         print addedmember.id
