@@ -3,6 +3,7 @@ from gnocchi_get_data import Resources_Usage
 from openstack_api import OpenstackConnection
 import ConfigParser
 import datetime
+import time
 
 def main_proccess():
     conf_path = "/root/main_code/autoscale-cloud/opestack-autoscale"
@@ -21,13 +22,13 @@ def main_proccess():
     #print Response_Time(instance_id)
     while 1 :
         Now_RT , TIMESTAMP = Response_Time()
-        sleep(80)
+        time.sleep(80)
         Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
         if Now_RT > upper_RT :
             k += 1
             w = sum(osc.workerInit())
             osc.addWorker()
-            sleep(80)
+            time.sleep(80)
             New_Resource_usage = Resources_Usage(instance_id , "last")
             Resource_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/Resorce_Net_data.txt", "aw")
             RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
