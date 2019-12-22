@@ -81,9 +81,10 @@ class OpenstackConnection :
         # scalelog.flush()
         last_OCT_Worker_IP = self.get_last_inactive_VM()
         worker_ip = "172.16.1." + str(last_OCT_Worker_IP)
-        addedmember = self.conn.network.create_pool_member("7c904e3d-9745-47e4-bdaa-9cf88e234d16",
+        worker_name = "worker-" + str(last_OCT_Worker_IP)
+        addedmember = self.conn.network.create_pool_member("09b7c08e-c993-47b7-a52f-373e89bf1535",
                                                       address=worker_ip, protocol_port="80",
-                                                      subnet_id="259b9592-013f-47c8-b4bc-f66b627dff88"
+                                                      subnet_id="292390c6-2664-4f97-9b8b-d45b2d5cb4e6"
                                                       , name=worker_name, weight="1")
         time.sleep(5)
         print addedmember.id
@@ -93,7 +94,7 @@ class OpenstackConnection :
     def removeWorker(self):
         Index = self.get_last_active_VM()
         member_id = self.member_id[Index]
-        pool_id = "7c904e3d-9745-47e4-bdaa-9cf88e234d16"
+        pool_id = "09b7c08e-c993-47b7-a52f-373e89bf1535"
         #instance_id = "a5e8bd0a-9748-4575-9bde-3c4b2824adbc"
         self.conn.network.delete_pool_member(member_id, pool_id)
         #print "member by id = %s removed from pool %s" % (member_id, pool_id)

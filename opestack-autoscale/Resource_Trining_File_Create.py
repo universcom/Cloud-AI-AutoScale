@@ -14,22 +14,22 @@ def main_proccess():
     print osc
     instance_id = configParser.get('configuration', 'instance_based_id')
     print instance_id
-    upper_RT = float(configParser.get('configuration', 'upper_RT'))
+    #upper_RT = float(configParser.get('configuration', 'upper_RT'))
     print upper_RT
-    lower_RT = float(configParser.get('configuration', 'lower_RT'))
+    #lower_RT = float(configParser.get('configuration', 'lower_RT'))
     print lower_RT
-    print Response_Time(instance_id)
+    #print Response_Time(instance_id)
     while 1 :
-        Now_RT = Response_Time()
-        sleep(60)
-        Now_Resource_usage = Resources_Usage(instance_id , "last")
+        Now_RT , TIMESTAMP = Response_Time()
+        sleep(80)
+        Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
         if Now_RT > upper_RT :
             k += 1
             w = sum(osc.workerInit())
             osc.addWorker()
-            sleep(180)
+            sleep(80)
             New_Resource_usage = Resources_Usage(instance_id , "last")
-            Resource_Net_Create_File =  open("./Resorce_Net_data.txt", "w")
+            Resource_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/Resorce_Net_data.txt", "aw")
             RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
             (New_Resource_usage[0], New_Resource_usage[1], New_Resource_usage[2], New_Resource_usage[3], New_Resource_usage[4],New_Resource_usage[5]
             ,Now_Resource_usage[0], Now_Resource_usage[1], Now_Resource_usage[2], Now_Resource_usage[3], Now_Resource_usage[4],Now_Resource_usage[5]
@@ -43,7 +43,7 @@ def main_proccess():
                 osc.removeWorker()
                 sleep(180)
                 New_Resource_usage = Resources_Usage(instance_id , "last")
-                Resource_Net_Create_File =  open("./Resorce_Net_data.txt", "w")
+                Resource_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale//Resorce_Net_data.txt", "w")
                 RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
                 (New_Resource_usage[0], New_Resource_usage[1], New_Resource_usage[2], New_Resource_usage[3], New_Resource_usage[4],New_Resource_usage[5]
                 ,Now_Resource_usage[0], Now_Resource_usage[1], Now_Resource_usage[2], Now_Resource_usage[3], Now_Resource_usage[4],Now_Resource_usage[5]
