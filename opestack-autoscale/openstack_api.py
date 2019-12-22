@@ -20,7 +20,7 @@ class OpenstackConnection :
         self.fill_VMs_dict()
 
     def fill_VMs_dict(self):
-        with open("/root/VMs_status_file", "r") as VMs_file:
+        with open("/root/main_code/autoscale-cloud/opestack-autoscale/VMs_status_file", "r") as VMs_file:
                 lines = VMs_file.readlines()
                 for line in lines:
                         index , value = line.split(",")
@@ -30,7 +30,7 @@ class OpenstackConnection :
         print self.VMs_dict
 
     def update_file(self):
-        with open("/root/VMs_status_file", "wa") as VMs_file:
+        with open("/root/main_code/autoscale-cloud/opestack-autoscale/VMs_status_file", "wa") as VMs_file:
                 for index , value in self.VMs_dict.items():
                         VMs_file.write(str(index) + "," + str(convert_to_number(value)) + "\n")
         VMs_file.close()
