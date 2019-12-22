@@ -1,5 +1,5 @@
 from gnocchi_api import gnocchi_api
-
+import time
 #def Resources_Usage(instance_id , LB_id , TIMESTAMP) :
 def Resources_Usage(instance_id , TIMESTAMP) :
     data = gnocchi_api("admin" , "hamed" , "admin")
@@ -10,8 +10,13 @@ def Resources_Usage(instance_id , TIMESTAMP) :
     print disk_instance_resource_id
     Resources_Usage_array = []
 
-
-    cpuUtileValue = data.get_metric_value("cpu_util" , "instance" , instance_resource_id , TIMESTAMP)
+    while 1:
+        cpuUtileValue = data.get_metric_value("cpu_util" , "instance" , instance_resource_id , TIMESTAMP)
+        if cpuUtileValue is None:
+            time.sleep(10)
+            continue
+        else:
+            break
     print cpuUtileValue
     Resources_Usage_array.append(cpuUtileValue)
 
