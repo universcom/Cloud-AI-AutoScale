@@ -89,8 +89,8 @@ class gnocchi_api:
     def time_compersation(self , RT_timestamp , Value_timestamp):
         RTT = RT_timestamp
         T1 = Value_timestamp
-        T2 = (datetime.strptime(T1, '%Y-%m-%dT%H:%M:%S') + timedelta(seconds=60)).strftime('%Y-%m-%dT%H:%M:%S')
-        if (RTT >= T1) and (RTT < T2):
+        T2 = (datetime.strptime(T1, '%Y-%m-%dT%H:%M:%S') - timedelta(seconds=60)).strftime('%Y-%m-%dT%H:%M:%S')
+        if (RTT < T1) and (RTT >= T2):
             return True
         else:
             return False
