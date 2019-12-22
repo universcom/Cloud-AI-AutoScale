@@ -59,7 +59,7 @@ class gnocchi_api:
         resp = requests.get(url , headers=header_date)
         all_responses = resp.json()
         if RT_timestamp == "last":
-            return resp[-1][2]
+            return resp.json()[-1][2]
         for response in all_responses:
             if self.time_compersation(RT_timestamp , response[0].split("+")[0]):
                 return response[2]
@@ -93,9 +93,9 @@ class gnocchi_api:
 
 
 
-def main():
-    resp = gnocchi_api("admin" , "hamed" , "admin")
-    print resp.get_metric_value("cpu_util" , "instance" , "4616c369-fe47-433d-9dc4-83ad547e95c5" , "last")
-    #print resp.get_resource_id("instance_network_interface" , "4bcb2b5b-0946-4b88-bfea-d43956333020")
-
-main()
+# def main():
+#     resp = gnocchi_api("admin" , "hamed" , "admin")
+#     print resp.get_metric_value("cpu_util" , "instance" , "4616c369-fe47-433d-9dc4-83ad547e95c5" , "last")
+#     #print resp.get_resource_id("instance_network_interface" , "4bcb2b5b-0946-4b88-bfea-d43956333020")
+#
+# main()
