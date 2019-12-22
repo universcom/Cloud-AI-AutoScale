@@ -95,7 +95,7 @@ class gnocchi_api:
 
 def main():
     resp = gnocchi_api("admin" , "hamed" , "admin")
-    print resp.get_metric_value("cpu_util" , "instance" , "661449cf-b267-4849-8613-9a348b35a9ee" , "2019-10-07T07:17:00")
+    print resp.get_metric_value("cpu_util" , "instance" , "4616c369-fe47-433d-9dc4-83ad547e95c5" , "last")
     #print resp.get_resource_id("instance_network_interface" , "4bcb2b5b-0946-4b88-bfea-d43956333020")
 
 main()
