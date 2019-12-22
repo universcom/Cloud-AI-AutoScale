@@ -24,7 +24,7 @@ def main_proccess():
         Now_RT , TIMESTAMP = Response_Time()
         print "now RT is: %s" %(Now_RT)
         print "TIMESTAMP is: %s" %(TIMESTAMP)
-        time.sleep(80)
+        time.sleep(90)
         Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
         print Now_Resource_usage
         if Now_RT > upper_RT :
@@ -33,7 +33,7 @@ def main_proccess():
             w = osc.workerInit()
             print "w is %s" %(w)
             osc.addWorker()
-            time.sleep(80)
+            time.sleep(90)
             New_Resource_usage = Resources_Usage(instance_id , "last")
             print "new resource usage is : " + New_Resource_usage
             Resource_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/Resorce_Net_data.txt", "aw")
