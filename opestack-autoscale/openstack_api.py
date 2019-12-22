@@ -32,7 +32,7 @@ class OpenstackConnection :
     def update_file(self):
         with open("/root/main_code/autoscale-cloud/opestack-autoscale/VMs_status_file.txt", "wa") as VMs_file:
                 for index , value in self.VMs_dict.items():
-                        VMs_file.write(str(index) + "," + str(convert_to_number(value)) + "\n")
+                        VMs_file.write(str(index) + "," + str(self.convert_to_number(value)) + "\n")
         VMs_file.close()
 
     def get_last_inactive_VM(self):
