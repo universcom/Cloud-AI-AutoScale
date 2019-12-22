@@ -41,7 +41,7 @@ def main_proccess():
             w = sum(osc.workerInit())
             if w > 1:
                 osc.removeWorker()
-                sleep(180)
+                sleep(80)
                 New_Resource_usage = Resources_Usage(instance_id , "last")
                 Resource_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale//Resorce_Net_data.txt", "w")
                 RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
