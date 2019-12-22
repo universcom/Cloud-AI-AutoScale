@@ -52,7 +52,7 @@ class gnocchi_api:
     def get_metric_value(self , metric_name , resource_type ,resource_id , RT_timestamp ):
         TIMSTAMP_to_TIME = datetime.strptime(RT_timestamp, '%Y-%m-%dT%H:%M:%S')
         GMTIME = TIMSTAMP_to_TIME - datetime.timedelta(minutes=210)
-        RT_timestamp = GMTIME..strftime("%Y-%m-%dT%H:%M:%S")
+        RT_timestamp = GMTIME.strftime("%Y-%m-%dT%H:%M:%S")
         print RT_timestamp
         header_date = {
             'Content-Type':'application/json' ,
