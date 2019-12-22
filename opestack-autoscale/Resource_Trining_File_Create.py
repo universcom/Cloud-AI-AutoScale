@@ -14,9 +14,9 @@ def main_proccess():
     print osc
     instance_id = configParser.get('configuration', 'instance_based_id')
     print instance_id
-    #upper_RT = float(configParser.get('configuration', 'upper_RT'))
+    upper_RT = float(configParser.get('configuration', 'upper_RT'))
     print upper_RT
-    #lower_RT = float(configParser.get('configuration', 'lower_RT'))
+    lower_RT = float(configParser.get('configuration', 'lower_RT'))
     print lower_RT
     #print Response_Time(instance_id)
     while 1 :
