@@ -24,7 +24,7 @@ def main_proccess():
         Now_RT , TIMESTAMP = Response_Time()
         print "now RT is: %s" %(Now_RT)
         print "TIMESTAMP is: %s" %(TIMESTAMP)
-        time.sleep(90)
+        #time.sleep(90)
         Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
         print Now_Resource_usage
         if Now_RT > upper_RT :
