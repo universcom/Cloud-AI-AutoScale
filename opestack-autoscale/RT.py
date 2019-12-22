@@ -10,5 +10,6 @@ def Response_Time():
             roundtrip = (time.time() - start)
             Now_RT= float(roundtrip) * 1000
             TIMESTAMP = datetime.datetime.fromtimestamp(start).strftime('%Y-%m-%dT%H:%M:%S')
-            RT_array.append(Now_RT , TIMESTAMP)
+            RT_array.append(Now_RT)
+            RT_array.append(TIMESTAMP)
             return RT_array
