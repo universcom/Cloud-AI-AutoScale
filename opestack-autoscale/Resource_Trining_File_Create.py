@@ -30,7 +30,7 @@ def main_proccess():
         if Now_RT > upper_RT :
             k += 1
             print "k is %s" %(k)
-            w = sum(osc.workerInit())
+            w = osc.workerInit()
             print "w is %s" %(w)
             osc.addWorker()
             time.sleep(80)
@@ -46,7 +46,7 @@ def main_proccess():
         elif Now_RT < lower_RT:
             k -= 1
             print "k is %s" %(k)
-            w = sum(osc.workerInit())
+            w = osc.workerInit()
             print "w is %s" %(w)
             if w > 1:
                 osc.removeWorker()
