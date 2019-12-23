@@ -36,7 +36,7 @@ def main_proccess():
             time.sleep(60)
             TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
             New_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
-            print "new resource usage is : " + New_Resource_usage
+            print New_Resource_usage
             Resource_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/Resorce_Net_data.txt", "aw")
             RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
             (New_Resource_usage[0], New_Resource_usage[1], New_Resource_usage[2], New_Resource_usage[3], New_Resource_usage[4],New_Resource_usage[5]
@@ -54,7 +54,7 @@ def main_proccess():
                 sleep(60)
                 TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
                 New_Resource_usage = Resources_Usage(instance_id , TIMESTAM)
-                print "new resource usage is : " + New_Resource_usage
+                print New_Resource_usage
                 Resource_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale//Resorce_Net_data.txt", "w")
                 RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
                 (New_Resource_usage[0], New_Resource_usage[1], New_Resource_usage[2], New_Resource_usage[3], New_Resource_usage[4],New_Resource_usage[5]
