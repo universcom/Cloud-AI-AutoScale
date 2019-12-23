@@ -53,7 +53,7 @@ class gnocchi_api:
         TIMSTAMP_to_TIME = datetime.strptime(RT_timestamp, '%Y-%m-%dT%H:%M:%S')
         GMTIME = TIMSTAMP_to_TIME - timedelta(minutes=210)
         RT_timestamp = GMTIME.strftime("%Y-%m-%dT%H:%M:%S")
-        print RT_timestamp
+        #print RT_timestamp
         header_date = {
             'Content-Type':'application/json' ,
             'Content-Length': '0' ,
