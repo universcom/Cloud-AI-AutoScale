@@ -26,7 +26,7 @@ def main_proccess():
         print "TIMESTAMP is: %s" %(TIMESTAMP)
         #time.sleep(90)
         #Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
-        print Now_Resource_usage
+        #print Now_Resource_usage
         w = osc.workerInit()
         while Now_RT > upper_RT :
             k += 1
