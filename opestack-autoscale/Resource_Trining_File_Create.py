@@ -25,13 +25,14 @@ def main_proccess():
         print "now RT is: %s" %(Now_RT)
         print "TIMESTAMP is: %s" %(TIMESTAMP)
         #time.sleep(90)
-        Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
+        #Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
         print Now_Resource_usage
         w = osc.workerInit()
         while Now_RT > upper_RT :
             k += 1
             print "k is %s" %(k)
             print "w is %s" %(w)
+            Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
             osc.addWorker()
             time.sleep(60)
             TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
@@ -51,6 +52,7 @@ def main_proccess():
             k -= 1
             print "k is %s" %(k)
             print "w is %s" %(w)
+            Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
             osc.removeWorker()
             sleep(60)
             TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
