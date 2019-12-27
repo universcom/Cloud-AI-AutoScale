@@ -8,7 +8,7 @@ def create_NN_file(instance_id) :
             TIMESTAMP , rt = line.split(",")
             resource_usage = Resources_Usage(instance_id , TIMESTAMP)
             RT_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/RT_Net_data.txt", "aw")
-            RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f\n" %(rt , resource_usage[0], resource_usage[1], resource_usage[2], resource_usage[3], resource_usage[4],resource_usage[5]))
+            RT_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f\n" %(rt , float(resource_usage[0]), float(resource_usage[1]), float(resource_usage[2]), float(resource_usage[3]), float(resource_usage[4]),float(resource_usage[5])))
             RT_Net_Create_File.close()
 
 create_NN_file("4616c369-fe47-433d-9dc4-83ad547e95c5")
