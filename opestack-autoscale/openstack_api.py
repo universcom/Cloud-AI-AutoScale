@@ -17,6 +17,7 @@ class OpenstackConnection :
                                      )
         self.VMs_dict = {}
         self.member_id = {}
+        self.member_id['170'] = 'c339670f-ce3a-47f0-9ba4-ae6ee776e1e8'
         self.fill_VMs_dict()
 
     def fill_VMs_dict(self):
