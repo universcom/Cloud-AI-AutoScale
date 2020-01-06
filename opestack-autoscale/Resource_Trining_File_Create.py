@@ -62,7 +62,7 @@ def main_proccess():
             ,Now_Resource_usage[0], Now_Resource_usage[1], Now_Resource_usage[2], Now_Resource_usage[3], Now_Resource_usage[4],Now_Resource_usage[5]
             ,k ,w))
             Resource_Net_Create_File.close()
-            if k + w -1 == 0 :
+            if k + w  == 0 :
                 break
 
 
