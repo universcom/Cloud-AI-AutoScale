@@ -48,11 +48,13 @@ def main_proccess():
             k -= 1
             print "k is %s" %(k)
             print "w is %s" %(w)
+            if k + w  == 0 :
+                break
             Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
             osc.removeWorker()
             sleep(60)
             TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
-            New_Resource_usage = Resources_Usage(instance_id , TIMESTAM)
+            New_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
             Now_RT , TIMESTAMP = Response_Time()
             print "now RT is: %s" %(Now_RT)
             print New_Resource_usage
@@ -62,8 +64,7 @@ def main_proccess():
             ,Now_Resource_usage[0], Now_Resource_usage[1], Now_Resource_usage[2], Now_Resource_usage[3], Now_Resource_usage[4],Now_Resource_usage[5]
             ,k ,w))
             Resource_Net_Create_File.close()
-            if k + w  == 0 :
-                break
+
 
 
     # conf_path = "/root/main_code/autoscale-cloud/opestack-autoscale"
