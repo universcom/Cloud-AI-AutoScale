@@ -17,7 +17,6 @@ class OpenstackConnection :
                                      )
         self.VMs_dict = {}
         self.member_id = {}
-        self.member_id['170'] = 'c339670f-ce3a-47f0-9ba4-ae6ee776e1e8'
         self.fill_VMs_dict()
 
     def fill_VMs_dict(self):
@@ -80,6 +79,7 @@ class OpenstackConnection :
         # scalelog.write(datetime.datetime.now().strftime(
         #     "%H:%M:%S ") + " Worker :" + worker_id + " by IP:" + worker_ip + " by name:" + worker_name + " added.\n")
         # scalelog.flush()
+        print "add workerrrrrrr"
         last_OCT_Worker_IP = self.get_last_inactive_VM()
         worker_ip = "172.16.1." + str(last_OCT_Worker_IP)
         worker_name = "worker-" + str(last_OCT_Worker_IP)
@@ -88,12 +88,16 @@ class OpenstackConnection :
                                                       subnet_id="047893e0-3a15-43dd-8078-d8a3acd1f4fc"
                                                       , name=worker_name, weight="1")
         time.sleep(5)
-        print addedmember.id
+        print "member_id is : %s" %(addedmember.id)
         self.member_id[last_OCT_Worker_IP] = addedmember.id
+        print "worker added by index: %s and member_ids dict is : " %(last_OCT_Worker_IP)
+        print self.member_id
 
 
     def removeWorker(self):
+        print "remove workerrrrrrr"
         Index = self.get_last_active_VM()
+        print "worker removed by index: %s and member_ids dict is : " %(Index)
         member_id = self.member_id[Index]
         pool_id = "09b7c08e-c993-47b7-a52f-373e89bf1535"
         #instance_id = "a5e8bd0a-9748-4575-9bde-3c4b2824adbc"
@@ -101,6 +105,7 @@ class OpenstackConnection :
         #print "member by id = %s removed from pool %s" % (member_id, pool_id)
         #self.conn.compute.delete_server(instance_id, ignore_missing=True, force=True)
         #print "instance by id = %s removed " % (instance_id)
+        print self.member_id
 
 
     def workerInit(self):
