@@ -55,7 +55,7 @@ class OpenstackConnection :
                     continue
                 if value :
                         self.VMs_dict[int(index)] = False
-                        #Index = index
+                        Index = index
                         break
         #print VM_arrays
         self.update_file()
