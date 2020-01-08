@@ -31,7 +31,7 @@ def main_proccess():
             print "k is %s" %(k)
             print "w is %s" %(w)
             osc.addWorker()
-            log_File.write("at %s : add worker and w = %s , k = %s" %(TIMESTAMP,w,k))
+            log_File.write("at %s : add worker and w = %s , k = %s\n" %(TIMESTAMP,w,k))
             time.sleep(60)
             TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
             New_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
@@ -54,7 +54,7 @@ def main_proccess():
             if k + w  == 0 :
                 break
             osc.removeWorker()
-            log_File.write("at %s : remove worker and w = %s , k = %s" %(TIMESTAMP,w,k))
+            log_File.write("at %s : remove worker and w = %s , k = %s\n" %(TIMESTAMP,w,k))
             time.sleep(60)
             TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
             New_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
