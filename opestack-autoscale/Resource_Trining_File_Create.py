@@ -19,6 +19,7 @@ def main_proccess():
     print "upper_RT is: %s" %(upper_RT)
     lower_RT = float(configParser.get('configuration', 'lower_RT'))
     print "lower_RT is: %s" %(lower_RT)
+    log_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/Resource_training.log", "aw")
     #print Response_Time(instance_id)
     while 1:
         Now_RT , TIMESTAMP = Response_Time()
@@ -30,6 +31,7 @@ def main_proccess():
             print "k is %s" %(k)
             print "w is %s" %(w)
             osc.addWorker()
+            log_File.write("at %s : add worker and w = %s , k = %s" %(TIMESTAMP,w,k))
             time.sleep(60)
             TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
             New_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
@@ -52,6 +54,7 @@ def main_proccess():
             if k + w  == 0 :
                 break
             osc.removeWorker()
+            log_File.write("at %s : remove worker and w = %s , k = %s" %(TIMESTAMP,w,k))
             time.sleep(60)
             TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
             New_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
@@ -65,7 +68,7 @@ def main_proccess():
             ,k ,w))
             Resource_Net_Create_File.close()
             Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
-
+    log_File.close()
 
 
     # conf_path = "/root/main_code/autoscale-cloud/opestack-autoscale"
