@@ -52,7 +52,7 @@ def main_proccess():
             if k + w  == 0 :
                 break
             osc.removeWorker()
-            sleep(60)
+            time.sleep(60)
             TIMESTAMP = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%dT%H:%M:%S')
             New_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
             Now_RT , TIMESTAMP = Response_Time()
