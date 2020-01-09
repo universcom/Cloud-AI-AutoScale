@@ -19,14 +19,14 @@ def main_proccess():
     print "upper_RT is: %s" %(upper_RT)
     lower_RT = float(configParser.get('configuration', 'lower_RT'))
     print "lower_RT is: %s" %(lower_RT)
-    log_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/Resource_training.log", "aw")
     #print Response_Time(instance_id)
     while 1:
+        log_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/Resource_training.log", "aw")
         Now_RT , TIMESTAMP = Response_Time()
         Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
         w = osc.workerInit()
         k = 0
-        while float(Now_Resource_usage[0]) > 80:
+        while float(Now_Resource_usage[0]) > 70:
             k += 1
             print "k is %s" %(k)
             print "w is %s" %(w)
@@ -47,7 +47,7 @@ def main_proccess():
             Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
         # w = osc.workerInit()
         # k = 0
-        while float(Now_Resource_usage[0]) < 30:
+        while float(Now_Resource_usage[0]) < 40:
             k -= 1
             print "k is %s" %(k)
             print "w is %s" %(w)
@@ -61,14 +61,14 @@ def main_proccess():
             Now_RT , TIMESTAMP = Response_Time()
             print "now RT is: %s" %(Now_RT)
             print New_Resource_usage
-            Resource_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/Resorce_Net_data.txt", "w")
+            Resource_Net_Create_File =  open("/root/main_code/autoscale-cloud/opestack-autoscale/Resorce_Net_data.txt", "aw")
             Resource_Net_Create_File.write("%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%0.3f,%i,%i\n" %
             (New_Resource_usage[0], New_Resource_usage[1], New_Resource_usage[2], New_Resource_usage[3], New_Resource_usage[4],New_Resource_usage[5]
             ,Now_Resource_usage[0], Now_Resource_usage[1], Now_Resource_usage[2], Now_Resource_usage[3], Now_Resource_usage[4],Now_Resource_usage[5]
             ,k ,w))
             Resource_Net_Create_File.close()
             Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
-    log_File.close()
+        log_File.close()
 
 
     # conf_path = "/root/main_code/autoscale-cloud/opestack-autoscale"
