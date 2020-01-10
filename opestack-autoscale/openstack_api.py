@@ -83,15 +83,16 @@ class OpenstackConnection :
         last_OCT_Worker_IP = self.get_last_inactive_VM()
         worker_ip = "172.16.1." + str(last_OCT_Worker_IP)
         worker_name = "worker-" + str(last_OCT_Worker_IP)
-        addedmember = self.conn.network.create_pool_member("09b7c08e-c993-47b7-a52f-373e89bf1535",
-                                                      address=worker_ip, protocol_port="80",
-                                                      subnet_id="047893e0-3a15-43dd-8078-d8a3acd1f4fc"
-                                                      , name=worker_name, weight="1")
-        time.sleep(5)
-        print "member_id is : %s" %(addedmember.id)
-        self.member_id[last_OCT_Worker_IP] = addedmember.id
-        print "worker added by index: %s and member_ids dict is : " %(last_OCT_Worker_IP)
-        print self.member_id
+        if int(last_OCT_Worker_IP) != 0:
+            addedmember = self.conn.network.create_pool_member("09b7c08e-c993-47b7-a52f-373e89bf1535",
+                                                          address=worker_ip, protocol_port="80",
+                                                          subnet_id="047893e0-3a15-43dd-8078-d8a3acd1f4fc"
+                                                          , name=worker_name, weight="1")
+            time.sleep(5)
+            print "member_id is : %s" %(addedmember.id)
+            self.member_id[last_OCT_Worker_IP] = addedmember.id
+            print "worker added by index: %s and member_ids dict is : " %(last_OCT_Worker_IP)
+            print self.member_id
 
 
     def removeWorker(self):
