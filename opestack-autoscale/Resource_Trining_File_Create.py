@@ -47,7 +47,7 @@ def main_proccess():
             Now_Resource_usage = Resources_Usage(instance_id , TIMESTAMP)
         # w = osc.workerInit()
         # k = 0
-        while float(Now_Resource_usage[0]) < 40:
+        while float(Now_Resource_usage[0]) < 50:
             k -= 1
             print "k is %s" %(k)
             print "w is %s" %(w)
